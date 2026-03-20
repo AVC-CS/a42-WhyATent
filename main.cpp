@@ -27,14 +27,9 @@ int main()
     const double RATE10 = 3.70;
     const double RATE20 = 4.80;
     double weight, distance, dRate, price;
-    char comma;
     cout << "Enter the package weight and distance:\n";
-    cin >> weight >> comma >> distance;
-    if ((weight <= 0 or weight > 20) or (distance < 10 or distance > 3000)){
-        cout << "Not accepted, input a weight > 0 and <= 20 and a distance >= 10 and <= 3000." << endl;
-        cout << weight << distance << endl;
-    }
-    else if (weight > 0 and weight <= 20){
+    cin >> weight >> distance; 
+    if (weight > 0 and weight <= 20){
         if (weight > 0 and weight <= 2){
             dRate = RATE2;
         }
@@ -47,8 +42,13 @@ int main()
         else if (weight > 10 and weight <= 20){
             dRate = RATE20;
         }
+    } else if (weight <= 0 or weight > 20){
+        cout << "Not accepted, input a weight > 0 and <= 20 and a distance >= 10 and <= 3000." << endl;
     }
-    if (distance <= 500){
+    if (distance < 10 or distance >3000){
+        cout << "Not accepted, input a weight > 0 and <= 20 and a distance >= 10 and <= 3000." << endl;
+    }
+    else if (distance <= 500){
         price = dRate;
     }
     else if (distance <= 1000){
@@ -60,10 +60,10 @@ int main()
     else if (distance <= 2000){
         price = dRate*4;
     }
-        else if (distance <= 2500){
+    else if (distance <= 2500){
         price = dRate*5;
     }
-        else if (distance <= 3000){
+    else if (distance <= 3000){
         price = dRate*6;
     }
     // TODO: determine rate based on weight
