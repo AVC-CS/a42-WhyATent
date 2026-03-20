@@ -32,6 +32,7 @@ int main()
     cin >> weight >> comma >> distance;
     if ((weight <= 0 or weight > 20) or (distance < 10 or distance > 3000)){
         cout << "Not accepted, input a weight > 0 and <= 20 and a distance >= 10 and <= 3000." << endl;
+        cout << weight << distance << endl;
     }
     else if (weight > 0 and weight <= 20){
         if (weight > 0 and weight <= 2){
