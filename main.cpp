@@ -43,28 +43,16 @@ int main()
             dRate = RATE20;
         }
     } else if (weight <= 0 or weight > 20){
-        cout << "Not accepted, input a weight > 0 and <= 20 and a distance >= 10 and <= 3000." << endl;
+        cout << "Not accepted, input a weight > 0." << endl;
     }
     if (distance < 10 or distance >3000){
-        cout << "Not accepted, input a weight > 0 and <= 20 and a distance >= 10 and <= 3000." << endl;
+        cout << "Not accepted, input a distance >= 10 and <= 3000." << endl;
+    }
+    else if (distance > 500){
+        price = (distance/500) * dRate;
     }
     else if (distance <= 500){
         price = dRate;
-    }
-    else if (distance <= 1000){
-        price = dRate*2;
-    }
-    else if (distance <= 1500){
-        price = dRate*3;
-    }
-    else if (distance <= 2000){
-        price = dRate*4;
-    }
-    else if (distance <= 2500){
-        price = dRate*5;
-    }
-    else if (distance <= 3000){
-        price = dRate*6;
     }
     // TODO: determine rate based on weight
 
